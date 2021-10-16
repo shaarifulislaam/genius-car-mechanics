@@ -1,0 +1,12 @@
+.service{
+    background-color: #dceeee;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width:688px) {
+    .service img{
+        width: 90%;
+        border-radius: 20px;
+        padding:0 10px;
+    }
+}
