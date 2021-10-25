@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 import { Button } from "react-bootstrap";
 import useAuth from "../../../hook/useAuth/useAuth";
-import { HashLink } from 'react-router-hash-link';
-
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const { user, logOut } = useAuth();
@@ -31,17 +30,18 @@ const Header = () => {
             <Nav.Link as={HashLink} to="/home#experts">
               Experts
             </Nav.Link>
-            {
-            user?.email ? 
+            <Nav.Link as={HashLink} to="/home#addService">
+              Add Service
+            </Nav.Link>
+            {user?.email ? (
               <Button onClick={logOut} variant="light">
                 Logout
               </Button>
-             : 
+            ) : (
               <Nav.Link as={Link} to="/login">
                 Login
               </Nav.Link>
-            
-            }
+            )}
             <Navbar.Text>
               Signed in as: <a href="#login">{user?.displayName}</a>
             </Navbar.Text>
